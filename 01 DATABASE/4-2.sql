@@ -1,7 +1,8 @@
-create database naver_db;
-use naver_db;
+create database naver_db; #데이터베이스 만들기  
+use naver_db; #파일 열기 
 
-create table member
+#테이블 윤곽(칼럼) 만들기 
+create table member 
 (
    mem_id char(8) not null,
    mem_name varchar(10) not null,
@@ -9,29 +10,33 @@ create table member
    addr char(2) not null,
    phone1 char(3) null,
    phone2 char(8) null,
-   height tinyint unsigned null,
+   height tinyint unsigned null, #표현 범위가 더 넓어지는 언사인드 #-128~127 ->0~256 (음수 영역을 양수로 끌어와서 표현 범위를 넓힌 것)
    debut_date date null,
    primary key(mem_id)
 );
 
+#테이블 정리 확인 
 desc member;
-# unsigned는 null 제약조건 앞에 넣어준다.
 
+# unsigned는 null 제약조건 앞에 넣어준다.
 create table buy
 (
-   num int not null primary key auto_increment,
+   num int not null primary key auto_increment, #오토 인크리먼트는 숫자 하나 넣으면 나머지 자동으로 들어가는 것
    mem_id char(8) not null ,
    prod_name char(6) not null,
    group_name char(4) null,
    price int unsigned not null,
    amount smallint unsigned not null,
-   foreign key (mem_id) references member(mem_id)
+   foreign key (mem_id) references member(mem_id) #포린키 지정 방법 기억. 참조도 적어줘야 함 
 ); 
 # 포린키 빼먹어서 추가하고 싶다면?
 # alter table buy add constraint foreign key (mem_id) references member(mem_id)
 #포린키는 왜 쓸까?
 # 참조무결성 때문 
+#포린키는 데이터의 참조무결성 떄문에 지정해 주는 것 
 
+#혹시 포린키 빼 먹은 경우 alter이용해서 추가해 줄 수 있다.
+# alter table buy add constraint foreign key (mem_id) references member(mem_id);
 
 desc buy;
 
@@ -81,6 +86,10 @@ right join buy as b on m.mem_id= b.mem_id;
 #쿼리 안에 또 다른 쿼리를 이용해서 원하는 데이터를 조회
 #이름이 에이핑크인 회원의 평균키(height)보다 큰 회원을 조회하기
 #쿼리를 한번써서 한번에 처리하겠다! (자동화)
+# select mem_name, height from member;
+#where height > 164;
+#원래 였으면 이렇게 두번 쿼리 작성해야 하지만
+#서브쿼리를 이용하면 한번에 표현 가능
 
 select mem_name, height from member
 where height > (
