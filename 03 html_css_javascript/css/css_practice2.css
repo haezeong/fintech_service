@@ -17,6 +17,7 @@
 
 .child {
     font-size: 200%;
+    /* 10px*2 =20px */
 
 }
 /* 같은 200%인데 왜 다르냐? 아무것도 먹이지 않은 div는 기본 16px, d안쪽 p클래스 차일드는 10px받은 것에서 200%가 된것임 */
@@ -24,6 +25,7 @@
 
 .child-to-child {
     font-size: 2rem;
+    /* 16px*2=32px */
 }
 
 /* rem은 익스플로어의 기본폰트 사이즈 기준으로 바뀌는 것, em은 부모요소의 텍스트 크기의 상대적 크기! 부모가 바뀌면 자식도 그것의 배수
@@ -164,7 +166,7 @@ normal, 숫자, %, px로 조절가능
 .boxmodel .box2 {
     border: solid 1px black;
     margin-top: 10px;
-    margin-bottom: 10px
+    margin-bottom: 20px;
 }
 .boxmodel .box3 {
     border: solid 1px black;
@@ -173,6 +175,8 @@ normal, 숫자, %, px로 조절가능
 }
 .boxmodel .box4 {
     width: 100px;
+    /* 보더, 패딩, 컨텐트 포함한 넓이로 만들어 진다는 것 생각하고 개발하기 */
+    /* 100px이라도 실제는 122px */
     border: solid 1px black;
 }
 .boxmodel .box4 {

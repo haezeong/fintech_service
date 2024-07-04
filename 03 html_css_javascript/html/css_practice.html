@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- link rel="stylesheet" href="index.css">링크를 통한 css연결 -->
-    <link rel="stylesheet" href="css_practice.css">
+    <link rel="stylesheet" href="../css/css_practice.css">
     <title>Document</title>
     <!-- 내부 스타일 시트 -->
     <!-- <style>
@@ -176,26 +176,31 @@
 
 
     <!-- 가상 클래스 셀렉터 -->
-     <h1>가상 클래스 셀렉터</h1>
-     <a href="#">hover me</a> <br><br>
-     <input type="text" placeholder="focus me">
- 
-
-     <h1>구조 가상 클래스 셀렉터</h1>
-     <h2>:first-child, :last-child</h2>
-
-     <div class="structural">
+    <h1>가상 클래스 셀렉터</h1>
+    <a href="#">hover me</a> <br><br>
+    <input type="text" placeholder="focus me">
+    
+    
+    <h1>구조 가상 클래스 셀렉터</h1>
+    <h2>:first-child, :last-child</h2>
+    
+    <div class="structural">
         <p>div.structural의 첫번째 문단</p>
-
+    
         <h1>홈페이지에 오신 것을 환영합니다.</h1>
         <p>이 문단은 부모(div.structural)의 첫번째 자식 문단이 아닙니다. 두번째 입니다.</p>
+    
         <div>
             <p>이것은 div의 첫번째 자식 문단 입니다.</p>
+            <div>
+                <p>이것은 div의 첫번째 자식 문단 입니다.</p>
+                <p>이것은 div의 두번째 자식 문단 입니다.</p>
+            </div>
             <p>이것은 div의 두번째 자식 문단 입니다.</p>
-
+    
         </div>
-        <p>이 문단은 부모(div.structural)의 마지막 자식 입니다.</p>
-     </div>
+        <p>이 문단은 부모(div.structural)의 마지막 자식입니다.
+    </div>
     
      
 

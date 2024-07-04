@@ -50,17 +50,18 @@ left : 왼쪽을 기준으로 좌표지정
 body{
     margin: 0;
 }
-/* ansolute
+/* absolute
 웹브라우저의 왼쪽 위 모서리가 기준점 */
 .green-box2{
     position: absolute;
     left: 100px;
     top: 100px;
+    /* top에따라 달라짐 확인 */
 }
 
 /* fixed : 그냥은 차이 안나는데, 움직이면(스크롤) 확인 가능 */
 .blue-box {
-    /* position: fixed; */
+    position: fixed;
     left: 200px;
 }
 
@@ -96,6 +97,7 @@ body{
     color: white;
     background-color: red;
     float: left;
+    /* float을 사용하면 가능- 내용 길이만큼 줄어서 인라인 요소처럼 배치된다 */
 }
 
 .blue-box3{
