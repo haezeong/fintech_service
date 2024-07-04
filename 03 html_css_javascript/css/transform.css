@@ -1,0 +1,54 @@
+div {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    color: brown;
+    line-height: 100px;
+    text-align: center;
+}
+
+
+
+/* transform은 요소를 변형시키는 기능 */
+/* 이동, 확대, 축소, 기울이기 */
+
+/* 이동하기 transform: translate(좌우-x축, 위아래-y축) */
+div:hover {
+    transform: translate(100px, 200px);
+    /* transform: translateX(100px); */
+    /* transform: translateY(200px); */
+
+}
+
+/* 확대 축소하기 : scale(x,y), scaleY, scaleX 
+-> 배율: 2(2배), 1보다 작은 소수는 축소*/
+div:hover {
+    transform: scale(2);
+    /* 범위 벗어나는 문제? */
+    transform: scaleX(2);
+    transform: scaleY(2);
+    transform: scale(0.5);
+}
+
+
+/* 기울이기 : skew(xdeg, ydeg) , skewX(), skewY() */
+div:hover {
+    transform: skew(30deg, 30deg);
+    transform: skewX(30deg);
+    transform: skewY(30deg);
+    transform: skewY(-30deg);
+    
+}
+
+/* 회전하기 rotate(deg) */
+div:hover {
+    transform: rotate(30deg);
+    /* transform-origin: x,y
+    x left, center, right
+    y: top, center, bottom
+     */
+    transform-origin: right, bottom;
+}
+
+
+
