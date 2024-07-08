@@ -17,9 +17,14 @@ document.write("자바스크립트 외부 링크 테스트"); */
 let num; //num이라는 이름의 변수 선언 빈박스 만듬.
 num = 10; //num 이라는 박스에 10이라는 자료를 넣음. 자료 할당
          //  = 는 오른쪽에 있는 자료를 왼쪽에 넣는다(할당한다)는 뜻.
+<<<<<<< HEAD
 // console.log(num) -->개발자 모드 콘솔에서 확인 가능
 let num2 = 20; // 변수를 선언 함과 동시에 자료 할당
 console.log("num2:", num2)
+=======
+
+let num2 = 20; // 변수를 선언 함과 동시에 자료 할당
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 num2 = 30;
 num = 50;
 
@@ -32,8 +37,11 @@ num = 50;
 // const num3;  // 선언만 했기 때문에 오류
 const num3 = 30;
 // document.write(num3)
+<<<<<<< HEAD
 // 상수형 변수 -한번 지정하면 업데이트 불가
 // 값이 변하지 않을 애들은 안전하게 const로 지정
+=======
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 
 // num3 = 40; // const 변수에 재할당을 하려고 해서 에러
 
@@ -45,7 +53,11 @@ let result = num4 * num5;
 // 자료형
 // 숫자형(정수, 실수), 문자형, 논리형(true, false)
 // 배열 array[숫자, 문자, 함수, 객체리터럴]  순서가 있다. 인덱싱, 슬라이싱
+<<<<<<< HEAD
 // 객체 리터럴, JSON, {key : value} -> 잘 숙지.중요.
+=======
+// 객체 리터럴, JSON, {key : value}
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 
 // 숫자형
 num = 10; //정수형
@@ -65,8 +77,13 @@ let string2 = 'javascript';
 // console.log(string1+" "+string2);  // 공백도 1개의 문자임. 문자 + 공백문자 + 문자
 
 // 이스케이프 문자
+<<<<<<< HEAD
 // console.log(string1+"\t"+string2);  // 탭(공간 띄우기)
 // console.log(string1+"\n"+string2);  // 줄바꿈
+=======
+// console.log(string1+"\t"+string2);
+// console.log(string1+"\n"+string2);
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 // console.log(string1+" \'"+string2+"\'");
 // console.log(string1+" \""+string2+"\"");
 
@@ -74,12 +91,20 @@ let string2 = 'javascript';
 // let string3 = `템플릿 문자열은 큰 따옴표(")나 작은 따옴표(')가 아닌 백틱으로(\`)문자열을 만듭니다.`;
 // console.log(string3);
 // let string4 = `템플릿 문자열은 \$\{\}을 이용해서 변수의 내용을 바로 출력 가능
+<<<<<<< HEAD
 //               num : ${num}`;  //문자열 내에서 동적으로 변수 삽입하고 싶을때 백틱을 사용한다.
 // console.log(string4);
 // console.log(`num + num2 = ${num+num2}`);
 
 // 배열 array: 여러 개의 자료가 나열되어 있는 형태의 
 // 파이썬이나 자바 스크립트는 여러가지 다른 데이터를 함께 넣을 수 있다.
+=======
+//               num : ${num}`;
+// console.log(string4);
+// console.log(`num + num2 = ${num+num2}`);
+
+// 배열 array: 여러 개의 자료가 나열되어 있는 형태의 자료형
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 // [] 대괄호 안에 여러개의 다른 데이터형의 자료도 넣을 수 있음
 // 순서가 있는 자료형, 순서에 맞추어 인덱스 번호 부여
 // 인덱스 번호로 자료를 호출 가능, 범위를 지정해서 호출도 가능
@@ -99,11 +124,16 @@ let arrayValues = [80, 3.14, "배열", [1,'신기해', [1,2,3],{배열:'array'}]
 // console.log(studentScore[1]); // 번호가 0번부터 시작하기 때문에 1번은 70
 // console.log(studentScore[0]); 
 // console.log(arrayValues[2]); 
+<<<<<<< HEAD
 
 // arrayValues에서 신기해를 출력해 보세요.
 // console.log(arrayValues[3][2]); 
 // 순서를 가지고 출력할 수 있는 것이 array.
 
+=======
+// arrayValues에서 신기해를 출력해 보세요.
+// console.log(arrayValues[3][2]); 
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 
 //객체 리터럴 JSON
 // {key : value}
@@ -123,10 +153,17 @@ let addressList2 = {name : ['홍길동', '둘리', '트와이스'],
 
 // 형변환: 자료형을 바꾸는 것
 // 암시적 형변환
+<<<<<<< HEAD
 const numChar = 10 + "10"; //자바스크립트에서는 숫자와 문자 연산을 하면 자동으로 문자 변환  //다른 언어에서는 백퍼 에러 발생
 console.log(numChar);
 const numChar2 = 10 + "StingChar"; //자바스크립트에서는 숫자와 문자 연산을 하면 자동으로 문자 변환
 console.log(numChar2);
+=======
+// const numChar = 10 + "10"; //자바스크립트에서는 숫자와 문자 연산을 하면 자동으로 문자 변환
+// console.log(numChar);
+// const numChar2 = 10 + "StingChar"; //자바스크립트에서는 숫자와 문자 연산을 하면 자동으로 문자 변환
+// console.log(numChar2);
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 
 // let strNum = "10";
 // num = 10;
@@ -136,7 +173,11 @@ console.log(numChar2);
 
 // let strNum2 = "10";
 // num = 10;
+<<<<<<< HEAD
 // if(num === strNum2){  
+=======
+// if(num === strNum2){  //strNum은 문자이지만 숫자형태라서 숫자 10과 비교시 숫자로 자동변환
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 //     console.log("같음");
 // }else{
 //     console.log("다름");
@@ -145,7 +186,11 @@ console.log(numChar2);
 // Number() 문자를 숫자로 변환, String() 숫자를 문자로 변환
 // let strNum3 = "10";
 // num = 10;
+<<<<<<< HEAD
 // if(num === Number(strNum3)){ 
+=======
+// if(num === Number(strNum3)){  //strNum은 문자이지만 숫자형태라서 숫자 10과 비교시 숫자로 자동변환
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 //     console.log("같음");
 // }else{
 //     console.log("다름");
@@ -156,12 +201,21 @@ console.log(numChar2);
 let a = 1;
 let b = 1;
 // console.log("a+b: ", a+b);
+<<<<<<< HEAD
 console.log("a++ + b++: ", a++ + b++);  // ++ 1증가  -- 1감소
 // ++a는 a를 먼저 1 증가 후 +연산
 // a++는 먼저 더하기 후 1 증가시켜 내보냄
 console.log("a++ + b++: ", a, "+", b, ": ", ++a + b++);
 console.log(a, "+", b, ": ", a + b);
 
+=======
+// console.log("a++ + b++: ", a++ + b++);  // ++ 1증가  -- 1감소
+// ++a는 a를 먼저 1 증가 후 +연산
+// a++는 먼저 더하기 후 1 증가시켜 내보냄
+// console.log("a++ + b++: ", a, "+", b, ": ", ++a + b++);
+// console.log(a, "+", b, ": ", a + b);
+// console.log(a, "+", b, ": ", a + b);
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 
 // 비교연산자
 //  == : x, y의 값이 같으면 true
@@ -226,6 +280,7 @@ let grade = score >= 90? 'A+' : 'B';
 //     console.log(studentScore[index]);
 // }
 
+<<<<<<< HEAD
 
 // let addressList = {name : '홍길동', school : '서초', age : 14};
 
@@ -234,12 +289,15 @@ let grade = score >= 90? 'A+' : 'B';
 //                   age : [14, 15, 16]};
 
 
+=======
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 // for ... in 반복문 객체 리터럴(json)과 함께 사용
 // console.log(addressList);
 // for(let keyName in addressList){
 //     console.log(keyName, addressList[keyName]);
 // }
 
+<<<<<<< HEAD
 console.log(addressList2);
 for(let keyName in addressList2){
     console.log(keyName), addressList2[keyName];
@@ -247,6 +305,15 @@ for(let keyName in addressList2){
         console.log(keyName, addressList2[keyName][index]);
     }
 }
+=======
+// console.log(addressList2);
+// for(let keyName in addressList2){
+//     // console.log(keyName), addressList2[keyName];
+//     for(let index in addressList2[keyName]){
+//         console.log(keyName, addressList2[keyName][index]);
+//     }
+// }
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 
 // break, continue문
 // break: 특정 조건을 만나면 반복을 중단 시킬때
@@ -343,11 +410,18 @@ let sumResult = calcSum(6, 3)
 // console.log(holResult);
 
 // 브라우저 객체 모델 사용하기
+<<<<<<< HEAD
 // 자바스크립트에서도 색깔 조정 가능하다
+=======
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
 function popup() {
     window.open('http://www.naver.com', '팝업', 'width=200', height='100')
 }
 
 const el = document.querySelector(".box-1");
 el.style.color = "red";
+<<<<<<< HEAD
 console.log(el);
+=======
+console.log(el);
+>>>>>>> 42ef7bfd67065c7664d77b3220eb4d38d24daa64
