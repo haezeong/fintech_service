@@ -4,12 +4,13 @@ import urllib.request
 import json
 import pandas as pd
 import time
+from dotenv import load_dotenv
+load_dotenv()
 
 def naver_search():
     """
-    이 함수는 naver 검색 api를 이용해서 블로그, 책, 뉴스, 전문자료를 검색하는
+    이 함수는 naver 검색 api를 이용해서 블로그, 책, 뉴스, 전문자료를 검색하는 함수입니다.
     """
-    
     service = input('''검색 서비스 번호를 입력하세요:
     1 블로그
     2 책
@@ -20,12 +21,16 @@ def naver_search():
     
     if service == '1':
         service = 'blog'
+        sort='sim'
     elif service =='2':
         service = 'book'
+        sort='sim'
     elif service =='3':
         service = 'news'
+        sort='date'
     elif service =='4':
         service = 'doc'
+        
     
     
     book_lists = []
@@ -33,11 +38,11 @@ def naver_search():
     start = 1
     
     while True:
-        client_id = "pRmtpgiw8Lf7F3QGZ4ar" # 네이버 api에 접속 가능한 id 
-        client_secret = "M_XHcT1MXF"       # 네이버 api에 접속 가능한 pw 
+        client_id = os.getenv('client_id') # 네이버 api에 접속 가능한 id 
+        client_secret = os.getenv('client_secret') # 네이버 api에 접속 가능한 pw 
         encText = urllib.parse.quote(query)
     #     print(encText)
-        url = f"https://openapi.naver.com/v1/search/{service}.json?query={encText}&display=10&start={start}"
+        url = f"https://openapi.naver.com/v1/search/{service}.json?query={encText}&display=10&start={start}&sort={sort}"
     #     print("url:", url, end="\r")
         try:
             request = urllib.request.Request(url)
@@ -50,7 +55,8 @@ def naver_search():
                 data = json.loads(response_body.decode('utf-8'))
                 book_lists.append(json.loads(response_body.decode('utf-8')))
                 total_page = data['total'] // 10 + 1
-
+                if total_page > 100:
+                    total_page = 100
             else:
                 print("Error Code:" + rescode)
                 break
