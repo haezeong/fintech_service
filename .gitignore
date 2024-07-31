@@ -1,1 +1,12 @@
+<<<<<<< HEAD
 .env
+.dbenv
+.dbenv.py
+dist
+build
+*.exe
+__pycache__
+.ipynb_checkpoints   
+=======
+.env
+>>>>>>> 39bed7657225c07f0a0af1940de5c2975fde4165
