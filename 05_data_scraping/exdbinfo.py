@@ -1,6 +1,6 @@
 db="mysql"
 dbtype="pymysql"
-id="root"
+user="root"
 pw="1234"
 host="127.0.0.1:3306"
-database="hana_bank_info"
+database="korea_exchange_rate"

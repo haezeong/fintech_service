@@ -1,13 +1,13 @@
 #db접속하는 함수 모듈
 from sqlalchemy import create_engine
-from exdbinfo import db, dbtype, id, pw, host, database
+from exdbinfo import db, dbtype, user, pw, host, database
 import pymysql
 import time
 
 pymysql.install_as_MySQLdb()
 
 def db_connect():
-    engine = create_engine("%s+%s://%s:%s@%s/%s" % (db, dbtype, id, pw, host, database))  #컴파일 과정에서 인식이 안되는 것 같다. 다 서식 지정자로 바꿈 -> 오직 이것만 성공
+    engine = create_engine("%s+%s://%s:%s@%s/%s" % (db, dbtype, user, pw, host, database))  #컴파일 과정에서 인식이 안되는 것 같다. 다 서식 지정자로 바꿈 -> 오직 이것만 성공
     conn = engine.connect()
     return conn
 
