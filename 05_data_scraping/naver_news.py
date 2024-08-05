@@ -1,56 +1,39 @@
-import os
-import request
-import sys
+import requests
 import pandas as pd
 from datetime import date
-import dbenv3
-import time
+import dbio
+from naver_api_info import client_id, client_secret
 
-news_lists = []
-page = 1
-start = 1
-dvenv3()
+client_id = client_id # 네이버 api에 접속 가능한 id 
+client_secret = client_secret # 네이버 api에 접속 가능한 pw 
+url = "https://openapi.naver.com/v1/search/news.json"
+payload = {'query': '핀테크', 'display' : 100, 'start' : 1, 'sort': 'date'}
+headers = {"X-Naver-Client-Id" : client_id, "X-Naver-Client-Secret" : client_secret}
+r = requests.get(url, params=payload, headers=headers)
+print(r.url)
+if(r.status_code == 200):
+    data = r.json()
+    print(type(data))
+else:
+    print("Error Code:", r.status_code)
 
-while True:
-    client_id = os.getenv('client_id') # 네이버 api에 접속 가능한 id 
-    client_secret = os.getenv('client_secret')      # 네이버 api에 접속 가능한 pw 
-    url = f"https://openapi.naver.com/v1/search/{service}.json"
-    payload = {'query': '핀테크', 'display' :10, 'start':1, 'sort':'sim'}
-    headers = {"X-Naver-Client-Id" : client_id ,"X-Naver-Client-Secret" : client_secret }
+today = date.today()
+# 원하는 형식으로 변환
+formatted_date = today.strftime("%d %b %Y")
 
-    try:
-    
-        r= requests.get(url, params= payload, headers =headers)
-        
-        if(r.status_code==200):
-            data = r.json()
-            book_lists.append(data)
-            total_page = data['total'] // 10 + 1
-            if total_page > 100:
-                total_page = 100
+print(formatted_date)  # 출력 예: 02 Aug 2024
 
-        else:
-            print("Error Code:" + r.status_code)
-            break
+def text_clean(x):
+    x = x.replace("&quot;", "").replace("<b>", "").replace("</b>", "").replace("‘", "").replace("’", "")
+    return x
 
-        if page < total_page:
-            page += 1
-            if start != 991:
-                start += 10
-            elif start == 991:
-                start += 9
-            print(f"{page:03d}/{total_page:03d}, start: {start} 추출중", end="\r")
-        else:
-            break
-        time.sleep(0.5)
-    except Exception as e:
-        print(e)
+result = {}
+for item in data['items']:
+    if formatted_date in item['pubDate']:
+        for key in item.keys():
+            result.setdefault(key, []).append(text_clean(item[key]))
+    else: 
         break
 
-
-print(len(news_lists))
-result = pd.DataFrame()
-for news in news_lists:
-    temp = pd.json_normalize(news['items'])
-    result = pd.concat([result, temp])
-result
+df = pd.DataFrame(result)
+dbio.news_to_db("fintech_news", str(today), df)
