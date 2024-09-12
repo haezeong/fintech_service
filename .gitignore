@@ -8,3 +8,7 @@ __pycache__
 .ipynb_checkpoints   
 *.tsv
 06_machine_learning/data/
+.joblib
+.keras
+model
+*.jpg
