@@ -9,6 +9,7 @@ __pycache__
 *.tsv
 06_machine_learning/data/
 .joblib
-.keras
+*.keras
 model
 *.jpg
+*.csv
