@@ -11,5 +11,6 @@ __pycache__
 .joblib
 *.keras
 model
+models
 *.jpg
 *.csv
