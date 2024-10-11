@@ -14,3 +14,6 @@ model
 models
 *.jpg
 *.csv
+국회.ipynb
+08_AI_Serving/extracted_files/
+extracted_files/
