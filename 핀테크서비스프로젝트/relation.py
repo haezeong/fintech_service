@@ -61,8 +61,8 @@ plt.figure(figsize=(10, 6))
 plt.scatter(average_data['average_price'], average_data['average_taste'], alpha=0.7, color='blue')
 
 # 축 및 제목 설정
-plt.title('Price vs Taste', fontsize=16)
-plt.xlabel('Average Price (₩)', fontsize=12)
-plt.ylabel('Average Taste Score', fontsize=12)
+plt.title('가격대비 맛', fontsize=16)
+plt.xlabel('가격대 (₩)', fontsize=12)
+plt.ylabel('맛', fontsize=12)
 plt.grid(True)
 plt.show()

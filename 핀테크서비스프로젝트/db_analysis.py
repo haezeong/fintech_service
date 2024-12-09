@@ -3,7 +3,7 @@ from firebase_admin import credentials, initialize_app, storage
 from dbenv import id, pw, host, database  # MySQL 연결 정보 가져오기
 
 # Firebase 초기화
-cred = credentials.Certificate("C:/study/fintech/final_project/final-project-8f802-firebase-adminsdk-dxoaf-794617e2ee.json")
+cred = credentials.Certificate("C:/fintech_service/핀테크서비스프로젝트/final-project-8f802-firebase-adminsdk-dxoaf-794617e2ee.json")
 initialize_app(cred, {'storageBucket': 'final-project-8f802.firebasestorage.app'})  # 올바른 버킷 이름 사용
 
 # MySQL 연결 정보
